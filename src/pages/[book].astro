@@ -6,9 +6,9 @@ const { book } = Astro.props
 
 const info = books.find((b) => b.id === book)
 
-// if (!info) {
-// 	return Astro.redirect('/404')
-// }
+if (!info) {
+	return Astro.redirect('/404')
+}
 ---
 
 <Layout title={info.title}>
