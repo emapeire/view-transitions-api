@@ -1,14 +1,20 @@
 ---
-const { title, img } = Astro.props
+export interface Props {
+	id: string
+	title: string
+	img: string
+}
+
+const { id, title, img } = Astro.props
 ---
 
 <a
 	class='hover:scale-105 inline-block transition-all hover:contrast-125 hover:shadow-2xl'
-	href='/clean-code'
+	href={`/${id}`}
 >
 	<img
 		class='aspect-[389/500] h-full w-full object-cover max-w-full rounded'
-		src='https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436202607i/3735293.jpg'
-		alt='Clean Code'
+		src={img}
+		alt={title}
 	/>
 </a>
