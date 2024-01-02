@@ -3,12 +3,14 @@ import BookItem from './BookItem.astro'
 import { books } from '../data/books.js'
 ---
 
-<ul class='grid grid-cols-2 md:grid-cols-3 gap-3 px-4'>
-	{
-		books.map(({ id, title, img }) => (
-			<li>
-				<BookItem id={id} title={title} img={img} />
-			</li>
-		))
-	}
-</ul>
+<div class='m-5'>
+	<ul class='grid grid-cols-2 md:grid-cols-3 gap-3 px-4'>
+		{
+			books.map(({ id, title, img }) => (
+				<li>
+					<BookItem id={id} title={title} img={img} />
+				</li>
+			))
+		}
+	</ul>
+</div>
