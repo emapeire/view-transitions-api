@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import { books } from '../data/books'
 import BuyNowIcon from '../icons/BuyNow.astro'
+import GoBackIcon from '../icons/GoBack.astro'
 
 const { book } = Astro.params
 
@@ -22,11 +23,10 @@ if (!info) {
 					alt={info.title}
 				/>
 			</picture>
-			<BuyNowIcon />
-			<p class='text-center text-blue-500 block mt-8'>
-				👉{' '}
-				<a href='/' class='hover:underline'>Go back to home page.</a>
-			</p>
+			<div class='flex flex-col gap-6'>
+				<BuyNowIcon />
+				<GoBackIcon />
+			</div>
 		</section>
 
 		<aside>

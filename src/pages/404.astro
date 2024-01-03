@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import GoBackIcon from '../icons/GoBack.astro'
 ---
 
 <Layout title='Book not found'>
 	<div class='grid place-content-center min-h-[715px]'>
 		<h1 class='text-4xl font-black mb-8 text-center'>Sorry! Book not found</h1>
 		<img src='https://midu.dev/images/this-is-fine-404.gif' />
-		<p class='text-center text-blue-500 block mt-8'>
-			👉{' '}
-			<a href='/' class='hover:underline'>Go back to home page.</a>
-		</p>
+		<section class='mt-8 flex justify-center'>
+			<GoBackIcon />
+		</section>
 	</div>
 </Layout>

@@ -15,6 +15,7 @@ const { title } = Astro.props
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
+		<meta name='view-transition' content='same-origin' />
 	</head>
 	<body>
 		<main class='m-auto max-w-4xl'>
@@ -35,6 +36,7 @@ const { title } = Astro.props
 		</footer>
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -65,3 +67,30 @@ const { title } = Astro.props
 			monospace;
 	}
 </style>
+
+<script>
+	window.navigation.addEventListener(
+		'navigate',
+		(event: {
+			destination: { url: string | URL }
+			intercept: (arg0: { handler(): Promise<void> }) => void
+		}) => {
+			const toUrl = new URL(event.destination.url)
+
+			if (location.origin !== toUrl.origin) return
+
+			event.intercept({
+				async handler() {
+					const response = await fetch(toUrl.pathname)
+					const html = await response.text()
+					const data = html.match(/<body[^>]*>([\s\S]*)<\/body>/i)[1]
+
+					document.startViewTransition(() => {
+						document.body.innerHTML = data
+						document.documentElement.scrollTop = 0
+					})
+				}
+			})
+		}
+	)
+</script>
