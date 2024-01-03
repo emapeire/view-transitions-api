@@ -23,9 +23,9 @@ if (!info) {
 
 	<div class='grid md:grid-cols-[350px_1fr] grid-cols-1 gap-x-12 mt-5 min-h-[551px] px-8'>
 		<section class='flex items-center mb-8'>
-			<picture class='md:w-full h-full relative w-auto'>
+			<picture class='w-auto h-full relative'>
 				<img
-					class='aspect-[389/500] object-cover w-[350px] rounded'
+					class='aspect-[389/500] object-cover rounded w-[350px]'
 					src={info.img}
 					alt={info.title}
 					style={`view-transition-name: book-${info.id}`}
@@ -44,7 +44,7 @@ if (!info) {
 					{info.author}
 				</span>
 			</p>
-			<div class='flex flex-col md:flex-row my-12 gap-4 justify-center'>
+			<div class='flex flex-col md:flex-row my-12 gap-4 md:justify-normal justify-center'>
 				<GoBackIcon />
 				<BuyNowIcon />
 			</div>
