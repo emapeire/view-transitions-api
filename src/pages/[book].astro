@@ -14,7 +14,16 @@ if (!info) {
 ---
 
 <Layout title={info.title}>
-	<div class='grid grid-cols-[350px_1fr] gap-x-12 mt-20 min-h-[635px]'>
+	<header>
+		<h1
+			class='md:text-4xl text-3xl font-bold uppercase text-center py-8 px-4'
+			style='view-transition-name: title'
+		>
+			Books of
+			<span class='block md:text-[24px] text-[20px]'>programming</span>
+		</h1>
+	</header>
+	<div class='grid grid-cols-[350px_1fr] gap-x-12 mt-5 min-h-[635px]'>
 		<section class='flex flex-col'>
 			<picture class='mb-8 w-full relative'>
 				<img
