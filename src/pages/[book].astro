@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import { books } from '../data/books'
 import BuyNowIcon from '../icons/BuyNow.astro'
 import GoBackIcon from '../icons/GoBack.astro'
+import Title from '../components/Title.astro'
 
 const { book } = Astro.params
 
@@ -14,12 +15,7 @@ if (!info) {
 ---
 
 <Layout title={info.title}>
-	<header class='text-center items-center px-8 md:px-4'>
-		<h1 class='md:text-4xl text-3xl font-bold uppercase py-8' style='view-transition-name: title'>
-			Books of
-			<span class='block md:text-[24px] text-[20px]'>programming</span>
-		</h1>
-	</header>
+	<Title scale='scale-75' />
 
 	<div class='grid md:grid-cols-[350px_1fr] grid-cols-1 gap-x-12 mt-5 min-h-[551px] px-8 md:px-4'>
 		<section class='flex items-center mb-8'>

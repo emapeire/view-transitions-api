@@ -1,9 +1,10 @@
-<>
-	<h1
-		class='md:text-8xl text-6xl font-bold uppercase text-center py-8 px-4'
-		style='view-transition-name: title'
-	>
+---
+const { scale } = Astro.props
+---
+
+<header class={`${scale} text-center items-center py-8 px-8 md:px-4`}>
+	<h1 class='md:text-8xl text-6xl font-bold uppercase' style='view-transition-name: title'>
 		Books of
 		<span class='block md:text-[62px] text-[39px]'>programming</span>
 	</h1>
-</>
+</header>
