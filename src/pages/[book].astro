@@ -14,18 +14,16 @@ if (!info) {
 ---
 
 <Layout title={info.title}>
-	<header class='text-center'>
-		<h1
-			class='md:text-4xl text-3xl font-bold uppercase py-8 px-4'
-			style='view-transition-name: title'
-		>
+	<header class='text-center px-8'>
+		<h1 class='md:text-4xl text-3xl font-bold uppercase py-8' style='view-transition-name: title'>
 			Books of
 			<span class='block md:text-[24px] text-[20px]'>programming</span>
 		</h1>
 	</header>
-	<div class='grid md:grid-cols-[350px_1fr] grid-cols-1 gap-x-12 mt-5 min-h-[551px]'>
-		<section class='flex flex-col'>
-			<picture class='mb-8 md:w-full w-[300px] relative'>
+
+	<div class='grid md:grid-cols-[350px_1fr] grid-cols-1 gap-x-12 mt-5 min-h-[551px] px-8'>
+		<section class='flex flex-col items-center'>
+			<picture class='mb-8 md:w-full md:max-w-full relative w-auto max-w-[300px]'>
 				<img
 					class='aspect-[389/500] h-full w-full object-cover max-w-full rounded'
 					src={info.img}
@@ -35,7 +33,7 @@ if (!info) {
 			</picture>
 		</section>
 
-		<aside class='mx-auto'>
+		<aside class='mx-auto items-center'>
 			<h1 class='md:text-5xl text-3xl font-black mb-4'>{info.title}</h1>
 			<p class='md:text-lg text-base mb-6'>{info.opinion}</p>
 			<p class=''>
@@ -46,7 +44,7 @@ if (!info) {
 					{info.author}
 				</span>
 			</p>
-			<div class='flex flex-row my-12 gap-4'>
+			<div class='flex flex-col md:flex-row my-12 gap-4 justify-center'>
 				<GoBackIcon />
 				<BuyNowIcon />
 			</div>
