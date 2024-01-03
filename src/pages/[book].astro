@@ -14,18 +14,18 @@ if (!info) {
 ---
 
 <Layout title={info.title}>
-	<header>
+	<header class='text-center'>
 		<h1
-			class='md:text-4xl text-3xl font-bold uppercase text-center py-8 px-4'
+			class='md:text-4xl text-3xl font-bold uppercase py-8 px-4'
 			style='view-transition-name: title'
 		>
 			Books of
 			<span class='block md:text-[24px] text-[20px]'>programming</span>
 		</h1>
 	</header>
-	<div class='grid grid-cols-[350px_1fr] gap-x-12 mt-5 min-h-[635px]'>
+	<div class='grid md:grid-cols-[350px_1fr] grid-cols-1 gap-x-12 mt-5 min-h-[551px]'>
 		<section class='flex flex-col'>
-			<picture class='mb-8 w-full relative'>
+			<picture class='mb-8 md:w-full w-[300px] relative'>
 				<img
 					class='aspect-[389/500] h-full w-full object-cover max-w-full rounded'
 					src={info.img}
@@ -33,16 +33,12 @@ if (!info) {
 					style={`view-transition-name: book-${info.id}`}
 				/>
 			</picture>
-			<div class='flex flex-col gap-6'>
-				<BuyNowIcon />
-				<GoBackIcon />
-			</div>
 		</section>
 
-		<aside>
-			<h1 class='text-5xl font-black mb-4'>{info.title}</h1>
-			<p class='text-lg mb-6'>{info.opinion}</p>
-			<p>
+		<aside class='mx-auto'>
+			<h1 class='md:text-5xl text-3xl font-black mb-4'>{info.title}</h1>
+			<p class='md:text-lg text-base mb-6'>{info.opinion}</p>
+			<p class=''>
 				<strong>
 					Author:{' '}
 				</strong>
@@ -50,6 +46,10 @@ if (!info) {
 					{info.author}
 				</span>
 			</p>
+			<div class='flex flex-row my-12 gap-4'>
+				<GoBackIcon />
+				<BuyNowIcon />
+			</div>
 		</aside>
 	</div>
 </Layout>
