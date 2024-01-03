@@ -1,18 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { books } from '../data/books.js'
+import { books } from '../data/books'
 
 const { book } = Astro.props
 
 const info = books.find((b) => b.id === book)
 
-if (!info) {
-	return Astro.redirect('/404')
-}
+// if (!info) {
+// 	return Astro.redirect('/404')
+// }
 ---
 
 <Layout title={info.title}>
-	<h1>{info.title}</h1>
-	<p>{info.opinion}</p>
-	<p>Author: {info.author}</p>
+	<div class='grid grid-cols-2 gap-x-4'>
+		<section class='flex flex-col'>
+			<picture>
+				<img src={info.img} alt={info.title} />
+			</picture>
+		</section>
+
+		<aside>
+			<h1>{info.title}</h1>
+			<p>{info.opinion}</p>
+			<p>Author: {info.author}</p>
+		</aside>
+	</div>
 </Layout>
