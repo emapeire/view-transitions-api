@@ -17,6 +17,7 @@ const { id, title, img } = Astro.props
 			class='aspect-[389/500] h-full w-full object-cover max-w-full rounded'
 			src={img}
 			alt={title}
+			style={`view-transition-name: book-${id}`}
 		/>
 	</a>
 </>
