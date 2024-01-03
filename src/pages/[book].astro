@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro'
 import { books } from '../data/books'
 import BuyNowIcon from '../icons/BuyNow.astro'
-import ReadNowIcon from '../icons/ReadNow.astro'
 
 const { book } = Astro.params
 
@@ -24,11 +23,10 @@ if (!info) {
 				/>
 			</picture>
 			<BuyNowIcon />
-			<!-- <ReadNowIcon /> -->
 		</section>
 
 		<aside>
-			<h1 class='text-6xl font-black mb-4'>{info.title}</h1>
+			<h1 class='text-5xl font-black mb-4'>{info.title}</h1>
 			<p class='text-lg mb-6'>{info.opinion}</p>
 			<p>
 				<strong>
